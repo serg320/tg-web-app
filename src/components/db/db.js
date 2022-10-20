@@ -3,12 +3,12 @@ import axios from "axios";
 export function getData() {
 
     return [
-        {id: '1', title: 'aaaaaa', price: 1200, description: 'lkjlj'},
-        {id: '2', title: 'bbbbbb', price: 1201, description: 'lkjlj'},
-        {id: '3', title: 'cccccc', price: 1202, description: 'lkjlj'},
-        {id: '4', title: 'dddddd', price: 1203, description: 'lkjlj'},
-        {id: '5', title: 'eeeeee', price: 1204, description: 'lkjlj'},
-        {id: '6', title: 'ffffff', price: 1205, description: 'lkjlj'},
-        {id: '7', title: 'jjjjjj', price: 1206, description: 'lkjlj'},
+        {id: '1', title: 'Продукт 1', price: 1200, description: 'описание'},
+        {id: '2', title: 'Продукт 2', price: 1201, description: 'описание'},
+        {id: '3', title: 'Продукт 3', price: 1202, description: 'описание'},
+        {id: '4', title: 'Продукт 4', price: 1203, description: 'описание'},
+        {id: '5', title: 'Продукт 5', price: 1204, description: 'описание'},
+        {id: '6', title: 'Продукт 6', price: 1205, description: 'описание'},
+        {id: '7', title: 'Продукт 7', price: 1206, description: 'описание'},
     ]
 }
