@@ -17,7 +17,7 @@ const ProductList = () => {
     const {tg, queryId} = useTelegram();
     const onSendData = useCallback(() => {
         const data = {
-            product: addedItems,
+            products: addedItems,
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
