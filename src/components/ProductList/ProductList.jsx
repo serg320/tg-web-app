@@ -27,7 +27,7 @@ const ProductList = () => {
     const {tg, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
-        alert('Добавили');
+        
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
@@ -40,6 +40,7 @@ const ProductList = () => {
             },
             body: JSON.stringify(data)
         })
+        alert('Добавили');
     }, [addedItems])
 
     useEffect(() => {
