@@ -7,6 +7,7 @@ import axios from "axios";
 const { getData } = require("../db/db.js");
 
 const products = getData();
+
 const getTotalPrice = (items = []) => {
     return items.reduce((acc, item) => {
         return acc += item.price
@@ -16,30 +17,22 @@ const getTotalPrice = (items = []) => {
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
+
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        axios.post('http://92.63.192.97:8150/web-data', 
-            { answer: 42 });
-        //axios({
-        //    method: 'post',
-       //     url: 'http://92.63.192.97:8150/web-data',
-        //    headers: {
-        //        'Content-Type': 'application/json',
-       //     },
-       //     data: JSON.stringify(data)
-      //    });
+        
         fetch('http://92.63.192.97:8150/web-data', {
-           method: 'POST',
+            method: 'POST',
             headers: {
                'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
-        });
-    }, [])
+        })
+    }, [addedItems])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
