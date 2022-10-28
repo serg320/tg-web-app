@@ -25,7 +25,7 @@ const ProductList = () => {
         axios.post('http://92.63.192.97:8150/web-data', {
             data: JSON.stringify(data)
           }, {
-            headers: {'Content-Type': 'application/json'}})
+            headers: {'Content-Type': 'application/json'}});
         //axios({
         //    method: 'post',
        //     url: 'http://92.63.192.97:8150/web-data',
