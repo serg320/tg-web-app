@@ -35,14 +35,14 @@ const ProductList = () => {
        //     },
        //     data: JSON.stringify(data)
       //    });
-       // fetch('http://92.63.192.97:8150/web-data', {
-        //    method: 'POST',
-         //   headers: {
-        //        'Content-Type': 'application/json',
-         //   },
-       //     body: JSON.stringify(data)
-    //    });
-    }, [onSendData])
+        fetch('http://92.63.192.97:8150/web-data', {
+           method: 'POST',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+    }, [])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
