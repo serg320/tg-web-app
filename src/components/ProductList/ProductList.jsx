@@ -22,8 +22,9 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
+        const body = JSON.stringify(data)
         axios.post('http://92.63.192.97:8150/web-data', {
-            data: JSON.stringify(data)
+            body
           }, {
             headers: {'Content-Type': 'application/json'}});
         //axios({
