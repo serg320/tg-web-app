@@ -27,7 +27,9 @@ const ProductList = () => {
     const {tg, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
-        alert('work11');
+        tg.MainButton.setParams({
+            text: '456'
+        });
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
