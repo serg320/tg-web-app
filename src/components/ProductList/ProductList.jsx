@@ -22,14 +22,18 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        axios({
-            method: 'post',
-            url: 'http://92.63.192.97:8150/web-data',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+        axios.post('http://92.63.192.97:8150/web-data', {
             data: JSON.stringify(data)
-          });
+          }, {
+            headers: {'Content-Type': 'application/json'}})
+        //axios({
+        //    method: 'post',
+       //     url: 'http://92.63.192.97:8150/web-data',
+        //    headers: {
+        //        'Content-Type': 'application/json',
+       //     },
+       //     data: JSON.stringify(data)
+      //    });
        // fetch('http://92.63.192.97:8150/web-data', {
         //    method: 'POST',
          //   headers: {
