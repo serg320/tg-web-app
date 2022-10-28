@@ -3,6 +3,7 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../hooks/useTelegram";
 import { useCallback, useEffect } from "react";
+import axios from "axios";
 const { getData } = require("../db/db.js");
 
 const products = getData();
@@ -21,13 +22,21 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        fetch('http://92.63.192.97:8150/web-data', {
-            method: 'POST',
+        axios({
+            method: 'post',
+            url: 'http://92.63.192.97:8150/web-data',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
-        });
+            data: JSON.stringify(data)
+          });
+       // fetch('http://92.63.192.97:8150/web-data', {
+        //    method: 'POST',
+         //   headers: {
+        //        'Content-Type': 'application/json',
+         //   },
+       //     body: JSON.stringify(data)
+    //    });
     }, [])
 
     useEffect(() => {
