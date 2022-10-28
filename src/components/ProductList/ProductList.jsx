@@ -16,7 +16,7 @@ const products = [
 ]
 
 const getTotalPrice = (items = []) => {
-    console.log('work11')
+   
     return items.reduce((acc, item) => {
         return acc += item.price
     }, 0)
@@ -27,7 +27,7 @@ const ProductList = () => {
     const {tg, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
-        console.log('work')
+        alert('work11');
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
